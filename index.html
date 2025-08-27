@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GLIVE Band</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -74,6 +75,17 @@
       max-width: 100%;
       height: auto;
       display: block;
+      background-color: #222; /* Fallback while loading */
+      border-radius: 12px;
+    }
+
+    /* Lazy load shimmer effect */
+    .lazyload {
+      filter: blur(10px);
+      transition: filter 0.5s ease;
+    }
+    .lazyloaded {
+      filter: blur(0);
     }
 
     .social-links a {
@@ -134,6 +146,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin: 0 auto 10px;
+      background-color: #222;
     }
 
     .insta-link {
@@ -141,11 +154,15 @@
       margin-top: 8px;
       color: #fff;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
       border: 1px solid #fff;
       padding: 6px 12px;
       border-radius: 20px;
       transition: 0.3s;
+    }
+
+    .insta-link i {
+      margin-right: 5px;
     }
 
     .insta-link:hover {
@@ -220,7 +237,7 @@
 
   <!-- Navbar -->
   <header>
-    <img src="k.jpg" alt="GLIVE Logo" style="height: 50px;" />
+    <img src="k.jpg" alt="GLIVE Logo" style="height: 50px;" loading="lazy" />
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -232,10 +249,10 @@
 
   <!-- Hero Section -->
   <section id="home">
-    <img src="k.jpg" alt="GLIVE Band" class="band-image" />
+    <img src="k.jpg" alt="GLIVE Band" class="band-image" loading="lazy" />
     <div class="social-links">
-      <a href="https://www.instagram.com/g__live_/?igsh=enNrcXl4aGh2eWtv#">Instagram</a>
-      <a href="https://wa.me/919744902041">WhatsApp</a>
+      <a href="https://www.instagram.com/g__live_/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://wa.me/919744902041" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
   </section>
 
@@ -248,17 +265,17 @@
       Every performance is more than just music – it’s an experience, a story told through emotive melodies, powerful rhythms, and unforgettable energy on stage.
       From intimate gatherings to massive live concerts, GLIVE connects hearts, sparks emotions, and brings people together through the universal language of music.
     </p>
-    <img src="1.png" alt="About GLIVE Band" />
+    <img src="1.png" alt="About GLIVE Band" loading="lazy" />
   </section>
 
   <!-- Gallery -->
   <section>
     <h1>Gallery</h1>
     <div class="gallery">
-      <img src="2.png" alt="Gallery Image 1" />
-      <img src="3.png" alt="Gallery Image 2" />
-      <img src="4.png" alt="Gallery Image 3" />
-      <img src="5.png" alt="Gallery Image 4" />
+      <img src="2.png" alt="Gallery Image 1" loading="lazy" />
+      <img src="3.png" alt="Gallery Image 2" loading="lazy" />
+      <img src="4.png" alt="Gallery Image 3" loading="lazy" />
+      <img src="5.png" alt="Gallery Image 4" loading="lazy" />
     </div>
   </section>
 
@@ -267,34 +284,34 @@
     <h1>Our Team</h1>
     <div class="team-grid">
       <div class="member">
-        <img src="gou.jpg" alt="Gautham" />
+        <img src="gou.jpg" alt="Gautham" loading="lazy" />
         <h2>Gautham</h2>
         <p>Singer</p>
-        <a href="https://instagram.com/gautham_insta" target="_blank" class="insta-link">Instagram</a>
+        <a href="https://www.instagram.com/gautampzd" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
       <div class="member">
-        <img src="jithin1.jpg" alt="Rakhi" />
+        <img src="jithin1.jpg" alt="Rakhi" loading="lazy" />
         <h2>Rakhi</h2>
         <p>Singer</p>
-        <a href="https://instagram.com/rakhi_insta" target="_blank" class="insta-link">Instagram</a>
+        <a href="https://www.instagram.com/iamrakhiraj" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
       <div class="member">
-        <img src="jit.jpg" alt="Jithin" />
+        <img src="jit.jpg" alt="Jithin" loading="lazy" />
         <h2>Jithin</h2>
         <p>Drummer</p>
-        <a href="https://instagram.com/jithin_insta" target="_blank" class="insta-link">Instagram</a>
+        <a href="https://www.instagram.com/jithindrummer" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
       <div class="member">
-        <img src="jeb.jpg" alt="Jebin R" />
+        <img src="jeb.jpg" alt="Jebin R" loading="lazy" />
         <h2>Jebin R</h2>
         <p>Bass Guitar</p>
-        <a href="https://instagram.com/jebin_insta" target="_blank" class="insta-link">Instagram</a>
+        <a href="https://www.instagram.com/_its__j3bin_" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
       <div class="member">
-        <img src="jithinq2.jpg" alt="Najid Nizarudheen" />
+        <img src="jithinq2.jpg" alt="Najid Nizarudheen" loading="lazy" />
         <h2>Najid Nizarudheen</h2>
         <p>Guitar</p>
-        <a href="https://instagram.com/najid_insta" target="_blank" class="insta-link">Instagram</a>
+        <a href="https://www.instagram.com/najidnizarudheen" target="_blank" class="insta-link"><i class="fab fa-instagram"></i> Instagram</a>
       </div>
     </div>
   </section>
@@ -305,7 +322,7 @@
     <p>Contact Here | Direct Message</p>
     <p><strong>Phone:</strong> <a href="tel:919744902041">919744902041</a></p>
     <p><strong>Email:</strong> <a href="mailto:sebinbusiness08@gmail.com">sebinbusiness08@gmail.com</a></p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/g__live_/?igsh=enNrcXl4aGh2eWtv#" target="_blank">g__live_</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/g__live_/" target="_blank">g__live_</a></p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3935.1387714705466!2d76.342994!3d9.505306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1692600000000" loading="lazy"></iframe>
   </section>
 
@@ -313,6 +330,17 @@
   <footer>
     &copy; 2025 GLIVE Band. All rights reserved.
   </footer>
+
+  <!-- JS to remove blur when loaded -->
+  <script>
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.classList.add('lazyload');
+      img.addEventListener('load', () => {
+        img.classList.remove('lazyload');
+        img.classList.add('lazyloaded');
+      });
+    });
+  </script>
 
 </body>
 </html>
