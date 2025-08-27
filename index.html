@@ -19,10 +19,17 @@
       padding: 20px 40px;
       background-color: #111;
       border-bottom: 1px solid #333;
+      flex-wrap: wrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 10px;
       color: #aaa;
       text-decoration: none;
       font-weight: 500;
@@ -63,6 +70,12 @@
       line-height: 1.6;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .social-links a {
       display: inline-flex;
       align-items: center;
@@ -91,12 +104,12 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      padding: 0 40px;
+      padding: 0 20px;
     }
 
     .gallery img {
       width: 100%;
-      height: 250px;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
       border-radius: 12px;
     }
@@ -105,13 +118,14 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
-      padding: 0 40px;
+      padding: 0 20px;
     }
 
     .member {
       background-color: #111;
       padding: 20px;
       border-radius: 12px;
+      text-align: center;
     }
 
     .member img {
@@ -119,7 +133,24 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 10px;
+      margin: 0 auto 10px;
+    }
+
+    .insta-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .insta-link:hover {
+      background-color: #fff;
+      color: #000;
     }
 
     .contact-section {
@@ -158,31 +189,32 @@
 
       nav {
         margin-top: 10px;
+        flex-direction: column;
       }
     }
 
-
-
-  @keyframes rotateAndSettle {
-    0% {
-      transform: rotate(0deg) scale(0.8);
-      opacity: 0;
+    @keyframes rotateAndSettle {
+      0% {
+        transform: rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+      50% {
+        transform: rotate(360deg) scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+      }
     }
-    50% {
-      transform: rotate(360deg) scale(1.05);
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(0deg) scale(1);
-    }
-  }
 
-  .band-image {
-    animation: rotateAndSettle 1.8s ease-out forwards;
-    display: block;
-    margin: auto;
-  }
-</style>
+    .band-image {
+      animation: rotateAndSettle 1.8s ease-out forwards;
+      display: block;
+      margin: auto;
+      max-width: 300px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -200,9 +232,10 @@
 
   <!-- Hero Section -->
   <section id="home">
-<img src="k.jpg" alt="GLIVE Band" style="max-width: 300px; border-radius: 12px;" class="band-image" />    <div class="social-links">
+    <img src="k.jpg" alt="GLIVE Band" class="band-image" />
+    <div class="social-links">
       <a href="https://www.instagram.com/g__live_/?igsh=enNrcXl4aGh2eWtv#">Instagram</a>
-      <a href="https://wa.me/‪919744902041‬">WhatsApp</a>
+      <a href="https://wa.me/919744902041">WhatsApp</a>
     </div>
   </section>
 
@@ -210,12 +243,12 @@
   <section id="about">
     <h1>About Us</h1>
     <p>
-We are GLIVE – a dynamic and passionate music band redefining the art of sound. Our journey is built on creativity, energy, and the love for music that transcends boundaries.
-We craft unique and captivating soundscapes that resonate with listeners across the globe. By blending the raw power of rock, the soulful essence of jazz, the futuristic vibe of electronic, and the timeless elegance of classical music, we create something truly extraordinary.
-
-Every performance is more than just music – it’s an experience, a story told through emotive melodies, powerful rhythms, and unforgettable energy on stage.
-From intimate gatherings to massive live concerts, GLIVE connects hearts, sparks emotions, and brings people together through the universal language of music.    </p>
-    <img src="1.png" ></img>
+      We are GLIVE – a dynamic and passionate music band redefining the art of sound. Our journey is built on creativity, energy, and the love for music that transcends boundaries.
+      We craft unique and captivating soundscapes that resonate with listeners across the globe. By blending the raw power of rock, the soulful essence of jazz, the futuristic vibe of electronic, and the timeless elegance of classical music, we create something truly extraordinary.
+      Every performance is more than just music – it’s an experience, a story told through emotive melodies, powerful rhythms, and unforgettable energy on stage.
+      From intimate gatherings to massive live concerts, GLIVE connects hearts, sparks emotions, and brings people together through the universal language of music.
+    </p>
+    <img src="1.png" alt="About GLIVE Band" />
   </section>
 
   <!-- Gallery -->
@@ -234,32 +267,35 @@ From intimate gatherings to massive live concerts, GLIVE connects hearts, sparks
     <h1>Our Team</h1>
     <div class="team-grid">
       <div class="member">
-        <img src="gou.jpg" alt="MEFIN" />
+        <img src="gou.jpg" alt="Gautham" />
         <h2>Gautham</h2>
         <p>Singer</p>
-      </div>
-            <div class="member">
-        <img src="jithin1.jpg" alt="" />
-        <h2>Rakhi </h2>
-        <p>Singer</p>
+        <a href="https://instagram.com/gautham_insta" target="_blank" class="insta-link">Instagram</a>
       </div>
       <div class="member">
-        <img src="jit.jpg" alt="JITHIN" />
+        <img src="jithin1.jpg" alt="Rakhi" />
+        <h2>Rakhi</h2>
+        <p>Singer</p>
+        <a href="https://instagram.com/rakhi_insta" target="_blank" class="insta-link">Instagram</a>
+      </div>
+      <div class="member">
+        <img src="jit.jpg" alt="Jithin" />
         <h2>Jithin</h2>
         <p>Drummer</p>
+        <a href="https://instagram.com/jithin_insta" target="_blank" class="insta-link">Instagram</a>
       </div>
       <div class="member">
-        <img src="jeb.jpg" alt="SREERAJ" />
+        <img src="jeb.jpg" alt="Jebin R" />
         <h2>Jebin R</h2>
-        <p>Bass guitar</p>
+        <p>Bass Guitar</p>
+        <a href="https://instagram.com/jebin_insta" target="_blank" class="insta-link">Instagram</a>
       </div>
       <div class="member">
-        <img src="jithinq2.jpg" alt="" />
-        <h2>Najid nizarudheen</h2>
+        <img src="jithinq2.jpg" alt="Najid Nizarudheen" />
+        <h2>Najid Nizarudheen</h2>
         <p>Guitar</p>
+        <a href="https://instagram.com/najid_insta" target="_blank" class="insta-link">Instagram</a>
       </div>
-
-
     </div>
   </section>
 
